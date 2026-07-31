@@ -286,10 +286,10 @@ const ICONS = {
 };
 const BUTTONS = [
   { key:"maps", label:"Get directions", sub:"Open in Google Maps", href:CONFIG.links.maps, full:true },
-  { key:"whatsapp", label:"Order on WhatsApp", href:waHref },
   { key:"instagram", label:"Instagram", href:CONFIG.links.instagram },
-  ...CONFIG.phones.map(p => ({ key:"phone", label:"Call", sub:p.label, href:`tel:+${p.number}` })),
-  { key:"facebook", label:"Facebook", href:CONFIG.links.facebook }
+  { key:"facebook", label:"Facebook", href:CONFIG.links.facebook },
+  { key:"whatsapp", label:"Order on WhatsApp", href:waHref },
+  ...CONFIG.phones.map(p => ({ key:"phone", label:"Call", sub:p.label, href:`tel:+${p.number}` }))
 ];
 $("links").innerHTML = BUTTONS.filter(b => b.href).map(b => `
   <a class="link${b.full ? " full" : ""}" href="${esc(b.href)}"${/^https/.test(b.href) ? ' target="_blank" rel="noopener"' : ""}>
@@ -362,4 +362,3 @@ setInterval(updateStatus, 60000);
 </script>
 </body>
 </html>
-
